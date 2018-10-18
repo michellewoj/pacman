@@ -1,0 +1,147 @@
+<html>
+
+<head>
+    <title>Pacman</title>
+    <style type="text/css">
+        body {
+            background-color: black;
+        }
+
+        div.row div {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+        div.brick {
+            background-color: blue;
+        }
+
+        div.coin {
+            background-image: url('coin.png');
+            background-size: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        div.pacman {
+            background: url('pacman.gif');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        var world = [
+            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 2, 1, 2, 2, 2, 2, 1, 2],
+            [2, 1, 2, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 2, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 1, 2, 2, 2, 2, 1, 2],
+            [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+        ];
+        function displayWorld() {
+            var output = '';
+            for (var i = 0; i < world.length; i++) {
+                output += "<div class='row'>";
+                for (var j = 0; j < world[i].length; j++) {
+                    if (world[i][j] == 2) {
+                        output += "\n\t<div class='brick'></div>";
+                    }
+                    else if (world[i][j] == 1) {
+                        output += "\n\t<div class='coin'></div>";
+                    }
+                    if (world[i][j] == 0) {
+                        output += "\n\t<div class='empty'></div>";
+                    }
+                }
+                output += "</div>";
+            }
+            // console.log(output);
+            document.getElementById('world').innerHTML = output;
+        };
+        // displayWorld();
+        setTimeout(function () {
+            displayWorld();
+        }, 1000)
+    </script>
+</head>
+
+<body>
+    <div id='world'></div>
+    <!-- <div class="row">
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+    </div>
+    <div class="row">
+        <div class="brick"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="pacman"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="brick"></div>
+    </div>
+    <div class="row">
+        <div class="brick"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="brick"></div>
+    </div>
+    <div class="row">
+        <div class="brick"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="brick"></div>
+    </div>
+    <div class="row">
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+    </div> -->
+
+    <!--display the bricks / coins / etc.var world is a multidimensional array-- >
+    
+    <!--have the pacman move-- >
+
+    <!--Do not allow the pacman to move past the bricks-- >
+    
+    <!--have the coin disapear when the pacman eats it-- >
+    
+    <!--have the score increase with each coin that's eaten -->
+</body>
+
+</html>
